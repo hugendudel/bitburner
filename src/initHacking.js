@@ -29,7 +29,6 @@ const filesToDownload = [
   'grow.js',
   'hack.js',
   'weaken.js',
-  'mainHack.js',
   'runHacking.js',
   'monitor.js',
   'sellHashes.js',
