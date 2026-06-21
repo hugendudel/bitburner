@@ -24,6 +24,7 @@ export async function main(ns) {
 
   while (scanArray.length) {
     const host = scanArray.shift()
+    if (host.startsWith('hacknet-')) continue;
 
     serverMap.servers[host] = {
       host,

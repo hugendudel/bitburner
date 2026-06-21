@@ -1,33 +1,37 @@
+let _settings;
 export function settings() {
-  return {
-    homeRamReserved: 100,
-    homeRamReservedBase: 20,
-    homeRamExtraRamReserved: 20,
-    homeRamBigMode: 64,
-    minSecurityLevelOffset: 1,  // security level offset above minimum (weaken)
-     maxMoneyMultiplier: 0.9, // multiplier of maximum money on server (grow)
-    minSecurityWeight: 100,
-    mapRefreshInterval: 24 * 60 * 60 * 1000,  // 1 day in ms
-    maxWeakenTime: 30 * 60 * 1000,  // 30 min
-    keys: {
-      serverMap: 'BB_SERVER_MAP',
-    },
-    changes: {
-      hack: 0.002,
-      grow: 0.004,
-      weaken: 0.05,
-    },
+  if (!_settings) {
+    _settings = {
+      homeRamReserved: 100,
+      homeRamReservedBase: 20,
+      homeRamExtraRamReserved: 20,
+      homeRamBigMode: 64,
+      minSecurityLevelOffset: 1,  // security level offset above minimum (weaken)
+      maxMoneyMultiplier: 0.9, // multiplier of maximum money on server (grow)
+      minSecurityWeight: 100,
+      mapRefreshInterval: 24 * 60 * 60 * 1000,  // 1 day in ms
+      maxWeakenTime: 30 * 60 * 1000,  // 30 min
+      keys: {
+        serverMap: 'BB_SERVER_MAP',
+      },
+      changes: {
+        hack: 0.002,
+        grow: 0.004,
+        weaken: 0.05,
+      },
 
-    maxPlayerServers: 25,
-    gbRamCost: 110000,
-    maxGbRam: 1048576,
-    minGbRam: 64,
-    totalMoneyAllocation: 0.9,
-    actions: {
-      BUY: 'buy',
-      UPGRADE: 'upgrade',
-    },
+      maxPlayerServers: 25,
+      gbRamCost: 110000,
+      maxGbRam: 1048576,
+      minGbRam: 64,
+      totalMoneyAllocation: 0.9,
+      actions: {
+        BUY: 'buy',
+        UPGRADE: 'upgrade',
+      },
+    }
   }
+  return _settings
 }
 
 export function getItem(key) {

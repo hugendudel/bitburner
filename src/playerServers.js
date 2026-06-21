@@ -45,8 +45,8 @@ function getPurchasedServers(ns) {
 export async function main(ns) {
   ns.tprint(`[${localeHHMMSS()}] Starting playerServers.js`)
 
-  settings().maxGbRam = ns.getPurchasedServerMaxRam()
-  settings().maxPlayerServers = ns.getPurchasedServerLimit()
+  settings().maxGbRam = ns.cloud.getRamLimit()
+  settings().maxPlayerServers = ns.cloud.getServerLimit()
   let hostname = ns.getHostname()
 
   if (hostname !== 'home') {
@@ -100,7 +100,6 @@ export async function main(ns) {
       if (smallestCurrentServer === settings().maxGbRam) {
        ns.tprint(`[${localeHHMMSS()}] All servers maxxed. Exiting.`)
        return
-        return
       }
 
       if (smallestCurrentServer === biggestCurrentServer) {
