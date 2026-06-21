@@ -18,7 +18,7 @@ The script can be slow to get going, but it'll get there eventually. Getting acc
 ```javascript
 export async function main(ns) {
   if (ns.getHostname() !== "home") {
-    throw new Exception("Run the script from home");
+    throw new Error("Run the script from home");
   }
 
   await ns.wget(

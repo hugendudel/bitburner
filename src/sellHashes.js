@@ -1,5 +1,5 @@
 /** @param {NS} ns **/
-import { settings, getItem, setItem, localeHHMMSS, createUUID } from 'common.js'
+import { settings, getItem, setItem, localeHHMMSS, createUUID } from './common.js'
 
 
 export async function main(ns) {
@@ -7,7 +7,7 @@ export async function main(ns) {
 
   let hostname = ns.getHostname()
   if (hostname !== 'home') {
-    throw new Exception('Run the script from home')
+    throw new Error('Run the script from home')
   }
 
   let keep_percent = 0.5

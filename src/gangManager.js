@@ -1,4 +1,4 @@
-import { getItem, setItem, localeHHMMSS } from 'common.js'
+import { getItem, setItem, localeHHMMSS } from './common.js'
 
 const settings = {
   keys: {
@@ -130,7 +130,7 @@ export async function main(ns) {
   let hostname = ns.getHostname()
 
   if (hostname !== 'home') {
-    throw new Exception('Run the script from home')
+    throw new Error('Run the script from home')
   }
 
   let nextAscensionAttempt = new Date().getTime() + 60 * 1000

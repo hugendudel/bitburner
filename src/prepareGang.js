@@ -1,4 +1,4 @@
-import { getItem, setItem } from 'common.js'
+import { getItem, setItem } from './common.js'
 
 const settings = {
   keys: {

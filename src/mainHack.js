@@ -5,7 +5,7 @@ import {
   localeHHMMSS,
   getPlayerDetails,
   createUUID
-} from 'common.js'
+} from './common.js'
 
 const hackPrograms = ['BruteSSH.exe', 'FTPCrack.exe', 'relaySMTP.exe',
   'HTTPWorm.exe', 'SQLInject.exe']
@@ -102,7 +102,7 @@ export async function main(ns) {
   let hostname = ns.getHostname()
 
   if (hostname !== 'home') {
-    throw new Exception('Run the script from home')
+    throw new Error('Run the script from home')
   }
 
   while (true) {
@@ -137,7 +137,7 @@ export async function main(ns) {
     let action = 'weaken'
     if (securityLevel > serverMap.servers[bestTarget].minSecurityLevel + settings().minSecurityLevelOffset) {
       action = 'weaken'
-    } else if (money < serverMap.servers[bestTarget].maxMoney * settings().maxMoneyMultipliyer) {
+    } else if (money < serverMap.servers[bestTarget].maxMoney * settings().maxMoneyMultiplier) {
       action = 'grow'
     } else {
       action = 'hack'

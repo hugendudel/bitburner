@@ -1,38 +1,31 @@
 const baseUrl = 'https://raw.githubusercontent.com/hugendudel/bitburner/master/src/'
 const filesToDownload = [
-  'common.js',
-  'find.js',
-  'grow.js',
-  'hack.js',
-  'killAll.js',
-  'mainHack.js',
-  'playerServers.js',
-  'runHacking.js',
-  'sellAllStock.js',
-  'spider.js',
-  'stockMarketer.js',
-  'weaken.js',
   'browserAutoHack.js',
   'commitCrime.js',
+  'common.js',
   'contracter.js',
+  'find.js',
   'gangFastAscender.js',
   'gangManager.js',
   'getCrimesData.js',
-  'getCrimesData2.js.js',
-  'hackingMission.js',
-  'karmaReducer.js',
-  'repareGang.js',
-  'sellAllStock.js',
-  'stockMarketer.js',
-  'stockMarketer4S.js',
-  'hacknet-auto.script',
+  'getCrimesData2.js',
   'grow.js',
   'hack.js',
-  'weaken.js',
+  'hacknet-auto.script',
+  'hackingMission.js',
+  'karmaReducer.js',
+  'killAll.js',
   'mainHack.js',
-  'runHacking.js',
   'monitor.js',
+  'playerServers.js',
+  'prepareGang.js',
+  'runHacking.js',
+  'sellAllStock.js',
   'sellHashes.js',
+  'spider.js',
+  'stockMarketer.js',
+  'stockMarketer4S.js',
+  'weaken.js',
 ]
 const valuesToRemove = ['BB_SERVER_MAP']
 
@@ -49,7 +42,7 @@ export async function main(ns) {
   let hostname = ns.getHostname()
 
   if (hostname !== 'home') {
-    throw new Exception('Run the script from home')
+    throw new Error('Run the script from home')
   }
 
   for (let i = 0; i < filesToDownload.length; i++) {

@@ -3,7 +3,7 @@ import {
   setItem,
   localeHHMMSS,
   getPlayerDetails
-} from 'common.js'
+} from './common.js'
 
 const hackPrograms = ['BruteSSH.exe', 'FTPCrack.exe', 'relaySMTP.exe',
   'HTTPWorm.exe', 'SQLInject.exe']
@@ -16,7 +16,7 @@ export async function main(ns) {
   let hostname = ns.getHostname()
 
   if (hostname !== 'home') {
-    throw new Exception('Run the script from home')
+    throw new Error('Run the script from home')
   }
 
   const serverMap = { servers: {}, lastUpdate: new Date().getTime() }

@@ -1,6 +1,6 @@
 // Based on https://github.com/danielyxie/bitburner/blob/master/src/data/codingcontracttypes.ts
 
-import { settings, getItem, localeHHMMSS } from 'common.js'
+import { settings, getItem, localeHHMMSS } from './common.js'
 
 function convert2DArrayToString(arr) {
   var components = []
@@ -390,7 +390,7 @@ export async function main(ns) {
   let hostname = ns.getHostname()
 
   if (hostname !== 'home') {
-    throw new Exception('Run the script from home')
+    throw new Error('Run the script from home')
   }
 
   const serverMap = getItem(settings().keys.serverMap)

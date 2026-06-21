@@ -1,4 +1,4 @@
-import { settings, getItem, setItem, localeHHMMSS, createUUID } from 'common.js'
+import { settings, getItem, setItem, localeHHMMSS, createUUID } from './common.js'
 
 function updateServer(ns, serverMap, host) {
   serverMap.servers[host] = {
@@ -50,7 +50,7 @@ export async function main(ns) {
   let hostname = ns.getHostname()
 
   if (hostname !== 'home') {
-    throw new Exception('Run the script from home')
+    throw new Error('Run the script from home')
   }
 
   while (true) {
@@ -98,8 +98,8 @@ export async function main(ns) {
       let targetRam = biggestCurrentServer
 
       if (smallestCurrentServer === settings().maxGbRam) {
-        ns.tprint(`[${localeHHMMSS()}] All servers maxxed. Exiting.`)
-        ns.exit()
+       ns.tprint(`[${localeHHMMSS()}] All servers maxxed. Exiting.`)
+       return
         return
       }
 

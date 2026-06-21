@@ -1,4 +1,4 @@
-import { localeHHMMSS } from 'common.js'
+import { localeHHMMSS } from './common.js'
 
 const commission = 100000
 let stockSymbols

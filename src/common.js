@@ -5,7 +5,7 @@ export function settings() {
     homeRamExtraRamReserved: 20,
     homeRamBigMode: 64,
     minSecurityLevelOffset: 1,  // security level offset above minimum (weaken)
-    maxMoneyMultipliyer: 0.9, // multiplier of maximum money on server (grow)
+     maxMoneyMultiplier: 0.9, // multiplier of maximum money on server (grow)
     minSecurityWeight: 100,
     mapRefreshInterval: 24 * 60 * 60 * 1000,  // 1 day in ms
     maxWeakenTime: 30 * 60 * 1000,  // 30 min

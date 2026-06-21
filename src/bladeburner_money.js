@@ -2,7 +2,7 @@
 
 import {
   localeHHMMSS,
-} from 'common.js'
+} from './common.js'
 
 
 function action_success(ns, action_type, action) {
@@ -59,7 +59,7 @@ export async function main(ns) {
 
   let hostname = ns.getHostname()
   if (hostname !== 'home') {
-    throw new Exception('Run the script from home')
+    throw new Error('Run the script from home')
   }
 
   let current_action = ""
